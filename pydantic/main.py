@@ -1,10 +1,10 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 app = FastAPI()
 
 class Product(BaseModel):
-    id: int
+    id: int = Field(title="Product ID should be integer")
     name: str
     price: float
     stock: int
